@@ -1,6 +1,7 @@
 import asyncio
 import discord
 import connect_backup as reddot
+import os
 from dotenv import load_dotenv
 from discord.ext import commands
 load_dotenv()
@@ -13,7 +14,7 @@ activeChannel = None
 
 @bot.event
 async def on_ready():
-    await holdOnASecond(10)
+    await holdOnASecond(68400)
 
 
 @bot.command()
@@ -76,7 +77,7 @@ async def holdOnASecond(seconds):
     await asyncio.sleep(seconds)
     await holdOnASecond(seconds)
 
-bot.run("MTA4ODM4NTEzMzM2MDQ2ODAyOA.Gg56TW.qObASSxPA1Vx-dzO2cHyByKHBO_AvP6ZVlTrTo")
+bot.run(os.getenv("TOKEN"))
 
 
 
